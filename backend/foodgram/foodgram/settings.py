@@ -129,3 +129,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+
+MAX_LENGTH_FOR_USER_PARAMS = 150
+MAX_LENGTH_RECIPE_PARAMS = 150
+MAX_EMAIL_LENGTH = 254

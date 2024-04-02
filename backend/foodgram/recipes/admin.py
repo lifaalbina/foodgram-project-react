@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Tag, Ingredient, Recipe, IngredientInRecipe, Favorite, ShoppingList
+from .models import (
+    Tag,
+    Ingredient,
+    Recipe,
+    IngredientInRecipe,
+    Favorite,
+    ShoppingList
+    )
+
 
 class RecipeAdmin(admin.ModelAdmin):
     """Настройка админ зоны Рецептов."""
