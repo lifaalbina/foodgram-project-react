@@ -9,6 +9,13 @@ from .models import (
     )
 
 
+class IngredientInRecipeAdmin(admin.TabularInline):
+    """Настройка отображения ингредиентов в разделе Рецепты."""
+
+    model = IngredientInRecipe
+    extra = 5
+
+
 class RecipeAdmin(admin.ModelAdmin):
     """Настройка админ зоны Рецептов."""
 
@@ -24,6 +31,7 @@ class RecipeAdmin(admin.ModelAdmin):
         'tags'
     )
     filter_horizontal = ('tags',)
+    inlines = (IngredientInRecipeAdmin,)
 
     def counting_favorites(self, obj):
         """Подсчет добавлений в избранное."""

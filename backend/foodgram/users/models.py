@@ -4,7 +4,12 @@ from django.db import models
 
 
 class User(AbstractUser):
-    """Кастомный пользователь."""
+    """Кастомный пользователь.
+
+    Атрибуты:
+    - USERNAME_FIELD: Логин пользователя.
+    - REQUIRED_FIELDS: Обязательные поля при создании пользователя.
+    """
 
     email = models.EmailField(
         'Почта',
@@ -27,6 +32,9 @@ class User(AbstractUser):
         'Пароль',
         max_length=settings.MAX_LENGTH_FOR_USER_PARAMS
     )
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ('email', 'first_name', 'last_name', 'password',)
 
     class Meta:
         """Дополнительные настройки админ панели."""
@@ -71,3 +79,4 @@ class AuthorSubscription(models.Model):
 
     def __str__(self) -> str:
         return f'{self.subscriber} подписан на {self.author}'
+ 

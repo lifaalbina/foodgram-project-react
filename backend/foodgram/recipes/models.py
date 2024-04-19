@@ -17,12 +17,10 @@ class Tag(models.Model):
     name = models.CharField(
         'Название',
         max_length=settings.MAX_LENGTH_RECIPE_PARAMS,
-        unique=True
     )
     color_code = models.CharField(
         'Цвет',
         max_length=7,
-        unique=True
     )
     slug = models.SlugField(
         'Слаг',
